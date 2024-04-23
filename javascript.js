@@ -4,12 +4,12 @@ alert("You will be playing the computer in a game of Rock, Paper, Scissors. Firs
 
 let userChoice = prompt("Which one will beat the PC? Rock, paper, or scissors? ").toLowerCase();
 
-
+//random computer choice from the array
 function getComputerChoice(){
     return choices[(Math.floor(Math.random() * choices.length))];
 }
 
-
+//function to determine the winner of a round
 
 function winner(userChoice, computerChoice){
     if (userChoice == computerChoice){
@@ -31,17 +31,12 @@ function winner(userChoice, computerChoice){
 
 let computerChoice = getComputerChoice();
 
+//Keeping Score
 
 let computerScore = 0;
 let userScore = 0;
 
-console.log(`User: ${userChoice}\nPC: ${computerChoice}`)
-
-winner(userChoice, computerChoice)
-
-console.log(`User: ${userScore}\nPC: ${computerScore}`)
-
-
+//While loop until one reaches 3 points. Then it will break.
 
 while (true){
     let userChoice = prompt("Which one will beat the PC? Rock, paper, or scissors? ").toLowerCase();
@@ -59,7 +54,7 @@ while (true){
     }
 
 }
-
+//announcing the winner
 if (computerScore == 3){
     alert("The Computer won...")
 }else {
